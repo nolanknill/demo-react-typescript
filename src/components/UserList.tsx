@@ -9,7 +9,7 @@ interface UserListProps {
 const UserList: React.FC<UserListProps> = (props) => {
     return (
         <>
-            <h2>{props.title}</h2>
+            <h2 className={props.active ? "active" : ""}>{props.title}</h2>
             <ul>
                 {props.users.map(user => (
                     <li key={user.id}>
