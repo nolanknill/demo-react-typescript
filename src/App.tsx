@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import UserList from "./components/UserList";
+import User from "./interfaces/User";
+import HoroscopeSign from "./enums/HoroscopeSign";
 
 function App() {
+  const users: User[] = [
+    {
+      id: 1,
+      name: "Person1",
+      horoscope: HoroscopeSign.Aquarius
+    }, {
+      id: 2,
+      name: "Person2",
+      horoscope: HoroscopeSign.Aries
+    }, {
+      id: 3,
+      name: "Person3",
+      horoscope: HoroscopeSign.Cancer
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>App</h1>
+      <UserList title={"User List"} users={users} />
+    </>
   );
 }
 
